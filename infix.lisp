@@ -5,7 +5,13 @@
 
 (defvar *synonyms* '((expt ^ **)))
 
-(defvar *operators* '((nil . 0) (+ . 1) (- . 1) (* . 2) (/ . 2) (expt . 3)))
+(defvar *operators*
+  '((nil . 0)
+    (and . 1) (or . 1)
+    (= . 2) (< . 2) (> . 2) (<= . 2) (>= . 2)
+    (+ . 3) (- . 3)
+    (* . 4) (/ . 4)
+    (expt . 5)))
 
 (defun precedence (operator)
   (cdr (assoc operator *operators*)))
